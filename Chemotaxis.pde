@@ -7,7 +7,7 @@ void setup() {
   }
 }
 void draw() {
-  background(250,250,250);
+  background(#ffffff);
   for(int i = 0; i < Chemo.length; i++) {
     Chemo[i].show();
     Chemo[i].taxis();
@@ -16,19 +16,11 @@ void draw() {
 class Walker {
    int x, y, rgb;
    Walker() {
-     x = (int)(Math.random()*200+125);
-     y = (int)(Math.random()*200+125);
+     x = (int)(Math.random()*465 +25);
+     y = (int)(Math.random()*465 +25);
      rgb = #00cccc;
   }
   void taxis() {
-    if(x < 25)
-      x += 10;
-    else if(x > 475)
-      x -= 10;
-    if(y < 75)
-      y += 10;
-    else if(y > 425)
-      y -= 10;
     if(mouseX > x)
       x += (int)(Math.random()*5)-1;
     else
@@ -42,6 +34,6 @@ class Walker {
   {
     noStroke();
     fill(rgb);
-    ellipse(x,y,20,20);
+    ellipse(x,y,10,10);
   }
 }
